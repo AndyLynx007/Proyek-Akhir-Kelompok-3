@@ -66,6 +66,7 @@ def add_data():
     else:
         print("Data sudah ada, Silahkan hapus terlebih dahulu jika ingin diganti.")    
 
+
     b = input("Tekan Enter untuk kembali")
     
 #Hapus Data
@@ -83,7 +84,8 @@ def delete_data():
             return
     print("Data tidak ditemukan.")
     b = input("Tekan Enter untuk kembali")
-    
+
+#Pilihan Pencarian Data    
 def find_data():
     print('''Cari data mahasiswa berdasarkan:
           1. NIM
@@ -97,11 +99,11 @@ def find_data():
 
 #Cari data (NIM)
 def find_data_nim():
-    nim = input("Masukkan NIM mahasiswa yang dicari: ")
+    nim = input("Masukkan NIM mahasiswa yang dicari: ").lower()
     data = read_data()
     
     for mahasiswa in data:
-        if mahasiswa[1] == nim:
+        if mahasiswa[1].lower() == nim:
             print(f"Data ditemukan: Nama: {mahasiswa[0]}, NIM: {mahasiswa[1]}, Program Studi: {mahasiswa[2]}")
             b = input("Tekan Enter untuk kembali")
             return
@@ -110,11 +112,11 @@ def find_data_nim():
 
 #Cari data (Nama)
 def find_data_name():
-    nama = input("Masukkan NIM mahasiswa yang dicari: ")
+    nama = input("Masukkan Nama mahasiswa yang dicari: ").lower()
     data = read_data()
     
     for mahasiswa in data:
-        if mahasiswa[0] == nama:
+        if mahasiswa[0].lower() == nama:
             print(f"Data ditemukan: Nama: {mahasiswa[0]}, NIM: {mahasiswa[1]}, Program Studi: {mahasiswa[2]}")
             b = input("Tekan Enter untuk kembali")
             return
