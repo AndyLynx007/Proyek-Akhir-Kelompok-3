@@ -59,10 +59,13 @@ def add_data():
 
     Mahasiswa = [Nama, NIM , Prodi]
     data = read_data()
-    data.append(Mahasiswa)
-    write_data(data)
+    if Mahasiswa not in data:    
+        data.append(Mahasiswa)
+        write_data(data)
+        print('Data berhasil ditambahkan')
+    else:
+        print("Data sudah ada, Silahkan hapus terlebih dahulu jika ingin diganti.")    
 
-    print('Data berhasil ditambahkan')
     b = input("Tekan Enter untuk kembali")
     
 #Hapus Data
