@@ -133,7 +133,7 @@ def sort_data():
     elif choice == '2':
         sort_data_name()
 
-#Fungsi mengurutkan data (NIM)
+#Fungsi Sortir Data (NIM)
 def sort_data_nim():
     data = read_data()
     if not data:
@@ -145,7 +145,7 @@ def sort_data_nim():
     print("Data berhasil diurutkan berdasarkan NIM!")
     display_data(data)
 
-#Fungsi Mengurutkan data (Nama)
+#Fungsi Sortir Data (Nama)
 def sort_data_name():
     data = read_data()
     if not data:
