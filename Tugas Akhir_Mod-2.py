@@ -4,14 +4,14 @@ import os
 def menu():
     print()
     print('''
-
+============================================================================================
      _______. __  .___  ___.      ___       _______       ___      .___  ___.      ___      
     /       ||  | |   \/   |     /   \     |       \     /   \     |   \/   |     /   \     
    |   (----`|  | |  \  /  |    /  ^  \    |  .--.  |   /  ^  \    |  \  /  |    /  ^  \    
     \   \    |  | |  |\/|  |   /  /_\  \   |  |  |  |  /  /_\  \   |  |\/|  |   /  /_\  \   
 .----)   |   |  | |  |  |  |  /  _____  \  |  '--'  | /  _____  \  |  |  |  |  /  _____  \  
 |_______/    |__| |__|  |__| /__/     \__\ |_______/ /__/     \__\ |__|  |__| /__/     \__\ 
-                                                                                            
+============================================================================================                                                                                            
 
 Selamat datang di Sistem Manajemen Data Mahasiswa (SIMADAMA).
 Apa yang ingin anda lakukan saat ini?
@@ -28,15 +28,15 @@ Apa yang ingin anda lakukan saat ini?
 
 #Fungsi Baca Data
 def read_data():
-    if not os.path.exists("data_mahasiswa.txt"): #Ada Path Penyimpanan
+    if not os.path.exists("D:\!Tugas Kuliah!\Dasprog\Proyek Akhir\data_mahasiswa.txt"):                        #Ada Path Penyimpanan
         return []
-    with open("data_mahasiswa.txt", "r") as file:  #Ada Path Penyimpanan
+    with open("D:\!Tugas Kuliah!\Dasprog\Proyek Akhir\data_mahasiswa.txt", "r") as file:                       #Ada Path Penyimpanan
         data = [line.strip().split(",") for line in file.readlines()]
     return data
 
 # Fungsi Tulis Data
 def write_data(data):
-    with open("data_mahasiswa.txt", "w") as file: #ada path penyimpanan
+    with open("D:\!Tugas Kuliah!\Dasprog\Proyek Akhir\data_mahasiswa.txt", "w") as file:                       #ada path penyimpanan
         for mahasiswa in data:
             file.write(",".join(mahasiswa) + "\n")
 
@@ -45,9 +45,12 @@ def display_data(data):
     if not data:
         print("Tidak ada data mahasiswa.")
     else:
-        print(f"{'No':<5} {'Nama':<20} {'NIM':<10} {'Program Studi':<15}")
-        for i, mahasiswa in enumerate(data):
-            print(f"{i+1:<5} {mahasiswa[0]:<20} {mahasiswa[1]:<10} {mahasiswa[2]:<15}")
+        try:
+            print(f"{'No':<5} {'Nama':<20} {'NIM':<10} {'Program Studi':<15}")
+            for i, mahasiswa in enumerate(data):
+                print(f"{i+1:<5} {mahasiswa[0]:<20} {mahasiswa[1]:<10} {mahasiswa[2]:<15}")
+        except:
+            print('File anda mungkin rusak')
 
     b = input("Tekan Enter untuk kembali")
     
