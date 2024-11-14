@@ -28,15 +28,15 @@ Apa yang ingin anda lakukan saat ini?
 
 #Fungsi Baca Data
 def read_data():
-    if not os.path.exists("D:\!Tugas Kuliah!\Dasprog\Proyek Akhir\data_mahasiswa.txt"):                        #Ada Path Penyimpanan
+    if not os.path.exists("data_mahasiswa.txt"):                        #Ada Path Penyimpanan
         return []
-    with open("D:\!Tugas Kuliah!\Dasprog\Proyek Akhir\data_mahasiswa.txt", "r") as file:                       #Ada Path Penyimpanan
+    with open("data_mahasiswa.txt", "r") as file:                       #Ada Path Penyimpanan
         data = [line.strip().split(",") for line in file.readlines()]
     return data
 
 # Fungsi Tulis Data
 def write_data(data):
-    with open("D:\!Tugas Kuliah!\Dasprog\Proyek Akhir\data_mahasiswa.txt", "w") as file:                       #ada path penyimpanan
+    with open("data_mahasiswa.txt", "w") as file:                       #ada path penyimpanan
         for mahasiswa in data:
             file.write(",".join(mahasiswa) + "\n")
 
