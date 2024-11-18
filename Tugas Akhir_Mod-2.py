@@ -56,9 +56,9 @@ def display_data(data):
     
 # Tambah Data
 def add_data():
-    Nama = input("Masukkan Nama: ")
-    NIM = input("Masukkan NIM: ")
-    Prodi = input("Masukkan Prodi: ")
+    Nama = input("Masukkan Nama: ").title()
+    NIM = input("Masukkan NIM: ").upper()
+    Prodi = input("Masukkan Prodi: ").title()
 
     Mahasiswa = [Nama, NIM , Prodi]
     data = read_data()
@@ -119,7 +119,7 @@ def find_data_name():
     data = read_data()
     
     for mahasiswa in data:
-        if mahasiswa[0].lower() == nama:
+        if  mahasiswa[0].lower() == nama:
             print(f"Data ditemukan: Nama: {mahasiswa[0]}, NIM: {mahasiswa[1]}, Program Studi: {mahasiswa[2]}")
             b = input("Tekan Enter untuk kembali")
             return
