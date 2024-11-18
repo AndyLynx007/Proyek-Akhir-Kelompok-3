@@ -23,7 +23,7 @@ Apa yang ingin anda lakukan saat ini?
     
 9. Keluar''')
     
-    choice = input("Masukkan Pilihan anda: ")
+    choice = input("Masukkan Pilihan anda: ").strip()
     return choice
 
 #Fungsi Baca Data
