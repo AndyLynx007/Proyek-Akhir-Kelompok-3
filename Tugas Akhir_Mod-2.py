@@ -123,7 +123,7 @@ def find_data_name():
             print(f"Data ditemukan: Nama: {mahasiswa[0]}, NIM: {mahasiswa[1]}, Program Studi: {mahasiswa[2]}")
             b = input("Tekan Enter untuk kembali")
             return
-    print("Data tidak ditemukan.")
+    print("Data tidak ditemukan. Silahkan coba lagi dengan memasukkan nama lengkap.")
     b = input("Tekan Enter untuk kembali")
 
 #Fungsi Pilihan Sortir
@@ -159,11 +159,11 @@ def sort_data_name():
     
     data.sort(key=lambda x: x[0])  
     write_data(data)
-    print("Data berhasil diurutkan berdasarkan Nama!")
+    print("Data berhasil diurutkan berdasarkan nama!")
     display_data(data)
 
 a = 0
-while a != 9:
+while a != '9':
     a = menu()
     if a == '1':
         data = read_data()
@@ -179,6 +179,6 @@ while a != 9:
     elif a == '9':
         print("Terima kasih telah menggunakan program ini")
         print('\n')
-        break
+        
     else:
         b = input("Masukkan Pilihan anda dengan benar (Tekan Enter untuk melanjutkan)")
